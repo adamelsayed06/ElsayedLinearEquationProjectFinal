@@ -86,12 +86,12 @@ public class LinearEquation {
         }
 
         if (numerator % denominator == 0){
-            String slopeInterceptForm = ("y = " + numerator/denominator + "x" + " + " + yIntercept() + "\n");
+            String slopeInterceptForm = ("y = " + (int)(numerator/denominator) + "x" + " + " + yIntercept() + "\n");
             if (yIntercept() < 0){
-                slopeInterceptForm = ("y = " + numerator/denominator + "x - " + (yIntercept() * -1) + "\n");
+                slopeInterceptForm = ("y = " + (int)(numerator/denominator) + "x - " + (yIntercept() * -1) + "\n");
             }
             if (yIntercept() == 0){
-                slopeInterceptForm = ("y = " + numerator/denominator + "x" + "\n");
+                slopeInterceptForm = ("y = " + (int)(numerator/denominator) + "x" + "\n");
             }
             return slopeInterceptForm;
 
@@ -125,7 +125,11 @@ public class LinearEquation {
         double yintercept = yIntercept();
         String slopeInterceptForm = equation();
         double distance = distance();
-        return point1 + point2 + "The slope is: " + slope + "\n" + "The y-intercept is: " + yintercept + "\n" + slopeInterceptForm + "The distance between the two points is: " + roundedToHundredth(distance);
+        if(x1 != x2) {
+            return point1 + point2 + "The slope is: " + slope + "\n" + "The y-intercept is: " + yintercept + "\n" + slopeInterceptForm + "The distance between the two points is: " + roundedToHundredth(distance);
+        } else{
+            return "These points are on a vertical line: x = " + x1;
+        }
     }
 }
 
