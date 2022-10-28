@@ -4,6 +4,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
+        System.out.println("Welcome!");
         System.out.println("Enter coordinate 1: ");
         String coords = scan.nextLine();
         int a = coords.indexOf(","); //find index of comma so we can find the numbers from theree
